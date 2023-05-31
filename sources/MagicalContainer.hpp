@@ -5,14 +5,19 @@
 #ifndef MAGICAL_ITERATORS_MAGICALCONTAINER_HPP
 #define MAGICAL_ITERATORS_MAGICALCONTAINER_HPP
 #include <vector>
+#include <iterator>
+#include <cstddef>
 
 using namespace std;
 namespace ariel {
 
     class MagicalContainer {
         //vectors are contiguous
+    private:
         vector<int> _vector;
-        vector<int> _primes;
+        vector<int*> _primes;
+        int _size;
+        int _sizePrimes;
     public:
         MagicalContainer();
         void addElement(int ele);
@@ -91,7 +96,7 @@ namespace ariel {
         struct PrimeIterator{
             using iterator_catagory = forward_iterator_tag; //TOBE DECIDED
             using difference_type = ptrdiff_t;
-            using value_type= int;
+            using value_type= int*;
             using pointer = value_type*;
             using reference = value_type&;
 
@@ -123,6 +128,8 @@ namespace ariel {
         };
 
     };
+
+    bool isPrime(int num);
 
 } // ariel
 

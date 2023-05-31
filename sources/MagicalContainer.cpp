@@ -36,6 +36,14 @@ namespace ariel {
 
     }
 
+    MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer::AscendingIterator &ascendingIterator) {
+
+    }
+
+    MagicalContainer::AscendingIterator& MagicalContainer::AscendingIterator::operator=(const AscendingIterator& ascendingIterator){
+        return *this;
+    }
+
     MagicalContainer::AscendingIterator::value_type &MagicalContainer::AscendingIterator::operator*() const {
         return *this->_ptr;
     }
@@ -91,6 +99,14 @@ namespace ariel {
 
     MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer container) {
 
+    }
+
+    MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer::SideCrossIterator &crossIterator) {
+
+    }
+
+    MagicalContainer::SideCrossIterator& MagicalContainer::SideCrossIterator::operator=(const SideCrossIterator& crossIterator){
+        return *this;
     }
 
     MagicalContainer::SideCrossIterator::value_type &MagicalContainer::SideCrossIterator::operator*() const {
@@ -150,6 +166,14 @@ namespace ariel {
 
     }
 
+    MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer::PrimeIterator &primeIterator) {
+
+    }
+
+    MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::operator=(const PrimeIterator& primeIterator){
+        return *this;
+    }
+
     MagicalContainer::PrimeIterator::value_type &MagicalContainer::PrimeIterator::operator*() const {
         return *this->_ptr;
     }
@@ -192,5 +216,10 @@ namespace ariel {
 
     MagicalContainer::PrimeIterator::~PrimeIterator() {
 
+    }
+
+
+    bool isPrime(int num) {
+        return true;
     }
 } // ariel
