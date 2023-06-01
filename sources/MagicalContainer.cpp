@@ -109,8 +109,8 @@ namespace ariel {
         return *this;
     }
 
-    MagicalContainer::SideCrossIterator::value_type &MagicalContainer::SideCrossIterator::operator*() const {
-        return *this->_ptr;
+    MagicalContainer::SideCrossIterator::reference &MagicalContainer::SideCrossIterator::operator*() const {
+        return **this->_ptr;
     }
 
     MagicalContainer::SideCrossIterator::pointer MagicalContainer::SideCrossIterator::operator->() {
@@ -174,8 +174,8 @@ namespace ariel {
         return *this;
     }
 
-    MagicalContainer::PrimeIterator::value_type &MagicalContainer::PrimeIterator::operator*() const {
-        return *this->_ptr;
+    MagicalContainer::PrimeIterator::reference &MagicalContainer::PrimeIterator::operator*() const {
+        return **this->_ptr;
     }
 
     MagicalContainer::PrimeIterator::pointer MagicalContainer::PrimeIterator::operator->() {
