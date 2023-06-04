@@ -33,7 +33,6 @@ namespace ariel {
             using reference = value_type&;
 
             AscendingIterator();
-            AscendingIterator(AscendingIterator& ascendingIterator);
             AscendingIterator(MagicalContainer container);
             AscendingIterator& operator=(const AscendingIterator& ascendingIterator);
 
@@ -43,8 +42,6 @@ namespace ariel {
 
             //prefix
             AscendingIterator& operator++();
-            //postfix
-            AscendingIterator operator++(int);
 
             friend bool operator==(const AscendingIterator& rhs,const AscendingIterator& lhs);
             friend bool operator!=(const AscendingIterator& rhs,const AscendingIterator& lhs);
@@ -68,17 +65,14 @@ namespace ariel {
             using reference = int&;
 
             SideCrossIterator();
-            SideCrossIterator(SideCrossIterator& crossIterator);
             SideCrossIterator(MagicalContainer container);
             SideCrossIterator& operator=(const SideCrossIterator& crossIterator);
 
-            reference operator*()const;
+            int operator*()const;
             pointer operator->();
 
             //prefix
             SideCrossIterator& operator++();
-            //postfix
-            SideCrossIterator operator++(int);
 
             friend bool operator==(const SideCrossIterator& rhs,const SideCrossIterator& lhs);
             friend bool operator!=(const SideCrossIterator& rhs,const SideCrossIterator& lhs);
@@ -99,20 +93,16 @@ namespace ariel {
             using difference_type = ptrdiff_t;
             using value_type= int*;
             using pointer = value_type*;
-            using reference = int&;
 
             PrimeIterator();
-            PrimeIterator(PrimeIterator& primeIterator);
             PrimeIterator(MagicalContainer container);
             PrimeIterator& operator=(const PrimeIterator& primeIterator);
 
-            reference operator*()const;
+            int operator*()const;
             pointer operator->();
 
             //prefix
             PrimeIterator& operator++();
-            //postfix
-            PrimeIterator operator++(int);
 
             friend bool operator==(const PrimeIterator& rhs,const PrimeIterator& lhs);
             friend bool operator!=(const PrimeIterator& rhs,const PrimeIterator& lhs);

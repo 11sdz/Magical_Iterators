@@ -11,7 +11,9 @@ namespace ariel {
     }
 
     void MagicalContainer::addElement(int ele) {
-
+        this->_numbers.push_back(ele);
+        this->_sideCross.push_back(&this->_numbers.front());
+        this->_primes.push_back(&this->_numbers.front());
     }
 
     void MagicalContainer::removeElement(int ele) {
@@ -33,11 +35,7 @@ namespace ariel {
     }
 
     MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer container) {
-
-    }
-
-    MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer::AscendingIterator &ascendingIterator) {
-
+        this->_ptr=&container._numbers.front();
     }
 
     MagicalContainer::AscendingIterator& MagicalContainer::AscendingIterator::operator=(const AscendingIterator& ascendingIterator){
@@ -53,10 +51,6 @@ namespace ariel {
     }
 
     MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator++() {
-        return *this;
-    }
-
-    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::operator++(int) {
         return *this;
     }
 
@@ -98,18 +92,15 @@ namespace ariel {
 
 
     MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer container) {
-
+        this->_ptr=&container._sideCross.front();
     }
 
-    MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer::SideCrossIterator &crossIterator) {
-
-    }
 
     MagicalContainer::SideCrossIterator& MagicalContainer::SideCrossIterator::operator=(const SideCrossIterator& crossIterator){
         return *this;
     }
 
-    MagicalContainer::SideCrossIterator::reference &MagicalContainer::SideCrossIterator::operator*() const {
+    int MagicalContainer::SideCrossIterator::operator*() const {
         return **this->_ptr;
     }
 
@@ -118,10 +109,6 @@ namespace ariel {
     }
 
     MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator++() {
-        return *this;
-    }
-
-    MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::operator++(int) {
         return *this;
     }
 
@@ -163,18 +150,14 @@ namespace ariel {
 
 
     MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer container) {
-
-    }
-
-    MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer::PrimeIterator &primeIterator) {
-
+        this->_ptr=&container._primes.front();
     }
 
     MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::operator=(const PrimeIterator& primeIterator){
         return *this;
     }
 
-    MagicalContainer::PrimeIterator::reference &MagicalContainer::PrimeIterator::operator*() const {
+    int MagicalContainer::PrimeIterator::operator*() const {
         return **this->_ptr;
     }
 
@@ -183,10 +166,6 @@ namespace ariel {
     }
 
     MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
-        return *this;
-    }
-
-    MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::operator++(int) {
         return *this;
     }
 
